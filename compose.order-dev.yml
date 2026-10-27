@@ -1,0 +1,4 @@
+services:
+  decisions:
+    environment:
+      GEMMA4_JEV_CONFIG: /app/config.order-dev.json

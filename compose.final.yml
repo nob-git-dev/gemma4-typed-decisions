@@ -1,0 +1,6 @@
+services:
+  decisions:
+    environment:
+      GEMMA4_JEV_CONFIG: /app/config.final.json
+    volumes:
+      - ./.cache/gemma4-jev/runtime/triton-20261028:/root/.triton/cache

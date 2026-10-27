@@ -1,0 +1,7 @@
+services:
+  decisions:
+    image: gx10-gemma4-jev:20261028-streamer
+    environment:
+      GEMMA4_JEV_CONFIG: /app/config.vllm.json
+      VLLM_WORKER_MULTIPROC_METHOD: spawn
+      PYTORCH_ALLOC_CONF: garbage_collection_threshold:0.6,max_split_size_mb:128

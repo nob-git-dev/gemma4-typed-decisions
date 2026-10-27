@@ -1,0 +1,10 @@
+{
+  "image_id": "sha256:53b121b2dd1ecefa28859a8f232be3c17f471d248352b30d93d8beaf6e0bb2ff",
+  "architecture": "arm64",
+  "memory_limit_bytes": 85899345920,
+  "nano_cpus": 4000000000,
+  "restart": "no",
+  "compiler_cache_files": 193,
+  "compiler_cache_bytes": 7225830,
+  "credential_in_model_container": false
+}

@@ -1,0 +1,131 @@
+{
+  "selected": "logit_mean",
+  "dataset_sha256": "431aa72c92d47f60e7c0d9eb593ae713d82d9bc9156c4a2f6d177563a82817fd",
+  "summaries": {
+    "single": {
+      "all": {
+        "n": 1200,
+        "accuracy": 0.7733333333333333,
+        "mean_latency_ms": 107.39326083334163,
+        "p95_latency_ms": 114.6288474497851,
+        "brier": 0.11004168346318913,
+        "normalized_mae": 0.12923450022761673,
+        "reported_score_contract_deviations": 0
+      },
+      "by_type": {
+        "noul": {
+          "n": 400,
+          "accuracy": 0.9075,
+          "mean_latency_ms": 106.28297037561424,
+          "p95_latency_ms": 110.61481747019569,
+          "brier": 0.09208193154729523,
+          "reported_score_contract_deviations": 0
+        },
+        "choice": {
+          "n": 400,
+          "accuracy": 0.8675,
+          "mean_latency_ms": 110.88940400935826,
+          "p95_latency_ms": 116.83236727549229,
+          "brier": 0.0651341593046723,
+          "reported_score_contract_deviations": 0
+        },
+        "score": {
+          "n": 400,
+          "accuracy": 0.545,
+          "mean_latency_ms": 105.00740811505239,
+          "p95_latency_ms": 109.97609650949015,
+          "brier": 0.17290895953759988,
+          "normalized_mae": 0.12923450022761673,
+          "reported_score_contract_deviations": 0
+        }
+      },
+      "macro_accuracy": 0.7733333333333334
+    },
+    "logit_mean": {
+      "all": {
+        "n": 1200,
+        "accuracy": 0.7933333333333333,
+        "mean_latency_ms": 123.01986096106702,
+        "p95_latency_ms": 137.25067692284938,
+        "brier": 0.10163240106705386,
+        "normalized_mae": 0.1195423150638822,
+        "reported_score_contract_deviations": 0
+      },
+      "by_type": {
+        "noul": {
+          "n": 400,
+          "accuracy": 0.9075,
+          "mean_latency_ms": 107.99725753488019,
+          "p95_latency_ms": 112.0860992494272,
+          "brier": 0.09208193154729523,
+          "reported_score_contract_deviations": 0
+        },
+        "choice": {
+          "n": 400,
+          "accuracy": 0.89,
+          "mean_latency_ms": 135.85102837416343,
+          "p95_latency_ms": 215.53568487870498,
+          "brier": 0.053258469404476594,
+          "reported_score_contract_deviations": 0
+        },
+        "score": {
+          "n": 400,
+          "accuracy": 0.5825,
+          "mean_latency_ms": 125.21129697415745,
+          "p95_latency_ms": 130.4518320801435,
+          "brier": 0.15955680224938976,
+          "normalized_mae": 0.1195423150638822,
+          "reported_score_contract_deviations": 0
+        }
+      },
+      "macro_accuracy": 0.7933333333333333
+    },
+    "probability_mean": {
+      "all": {
+        "n": 1200,
+        "accuracy": 0.7925,
+        "mean_latency_ms": 123.01986096106702,
+        "p95_latency_ms": 137.25067692284938,
+        "brier": 0.09876803191773348,
+        "normalized_mae": 0.1220420393717137,
+        "reported_score_contract_deviations": 0
+      },
+      "by_type": {
+        "noul": {
+          "n": 400,
+          "accuracy": 0.9075,
+          "mean_latency_ms": 107.99725753488019,
+          "p95_latency_ms": 112.0860992494272,
+          "brier": 0.09208193154729523,
+          "reported_score_contract_deviations": 0
+        },
+        "choice": {
+          "n": 400,
+          "accuracy": 0.89,
+          "mean_latency_ms": 135.85102837416343,
+          "p95_latency_ms": 215.53568487870498,
+          "brier": 0.052835529670285014,
+          "reported_score_contract_deviations": 0
+        },
+        "score": {
+          "n": 400,
+          "accuracy": 0.58,
+          "mean_latency_ms": 125.21129697415745,
+          "p95_latency_ms": 130.4518320801435,
+          "brier": 0.1513866345356202,
+          "normalized_mae": 0.1220420393717137,
+          "reported_score_contract_deviations": 0
+        }
+      },
+      "macro_accuracy": 0.7925
+    }
+  },
+  "rule": "Nonbinary development accuracies preserved; each mean HTTP latency <=140ms; max macro accuracy; logit tie preference",
+  "probability_mean_timing": "Same measured two-order GPU computation; probabilities combined offline for development selection",
+  "manifests_sha256": {
+    "single": "58d665c14672df63090eecb7fab112ffb83db4e631c5430126769d4cb7d4716a",
+    "orders": "988d85156c1af37cd0f62d097715d599ae43632460869151637e36a7cd53a4a4"
+  },
+  "final_config_sha256": "75ce48f7af154f8ccb6b0376c0586b6cc3845dca1dce33584c127e15cdaa0081",
+  "fresh_test_predictions_examined": false
+}

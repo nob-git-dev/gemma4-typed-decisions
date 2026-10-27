@@ -1,0 +1,7 @@
+{
+  "n_samples": 490,
+  "minimum_available_gib": 77.94587326049805,
+  "maximum_gpu_c": 74.0,
+  "maximum_thermal_c": 82.7,
+  "safety_stops": 0
+}

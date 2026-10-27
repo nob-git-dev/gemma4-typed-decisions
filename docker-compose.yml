@@ -1,0 +1,73 @@
+name: gemma4-jev
+x-runtime: &runtime
+  image: eugr/spark-vllm-b12x@sha256:03a956544e9f9b4b7ba91690469fbe7848bdbef29a7d2e0f5788368467bb3595
+  platform: linux/arm64
+  working_dir: /app
+  volumes:
+    - .:/app:ro
+  entrypoint: [python3]
+  init: true
+  restart: "no"
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  pids_limit: 256
+  cpus: 4
+  environment:
+    PYTHONDONTWRITEBYTECODE: "1"
+    TOKENIZERS_PARALLELISM: "false"
+    OMP_NUM_THREADS: "4"
+services:
+  tests:
+    <<: *runtime
+    profiles: [manual]
+    network_mode: none
+    mem_limit: 3g
+    command: [-m, unittest, discover, -s, tests, -v]
+  prepare:
+    <<: *runtime
+    profiles: [manual]
+    mem_limit: 3g
+    volumes:
+      - .:/app:ro
+      - ./.cache/gemma4-jev:/models
+    environment:
+      HF_HOME: /models/hf
+      HF_HUB_DISABLE_XET: "1"
+      HF_HUB_DOWNLOAD_TIMEOUT: "120"
+      HF_HUB_DISABLE_TELEMETRY: "1"
+    command: [prepare.py]
+  decisions:
+    <<: *runtime
+    image: gx10-gemma4-jev:20261027
+    build:
+      context: .
+    profiles: [manual]
+    container_name: gemma4-jev-decisions
+    network_mode: bridge
+    mem_limit: 80g
+    shm_size: 1g
+    volumes:
+      - .:/app:ro
+      - ./.cache/gemma4-jev:/models:ro
+      - /sys/devices/virtual/thermal:/host/thermal:ro
+    ports:
+      - "127.0.0.1:30000:8000"
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      TOKENIZERS_PARALLELISM: "false"
+      OMP_NUM_THREADS: "4"
+      HF_HUB_OFFLINE: "1"
+    command: [server.py]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    healthcheck:
+      test: [CMD, python3, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      start_period: 180s
+      retries: 30

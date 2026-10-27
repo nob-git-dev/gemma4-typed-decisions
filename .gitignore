@@ -1,0 +1,26 @@
+# Credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+.netrc
+
+# Models, runtime caches, and local environments
+.cache/
+.venv/
+__pycache__/
+*.py[cod]
+*.safetensors
+*.gguf
+*.pt
+*.pth
+.DS_Store
+
+# New runs and private logs stay local; only the curated final export is tracked.
+/evidence/
+/logs/
+*.log
+/results/*
+!/results/final/

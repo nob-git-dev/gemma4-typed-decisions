@@ -1,0 +1,118 @@
+{
+  "verdict": "PASS",
+  "baseline": {
+    "n": 3300,
+    "accuracy": 0.7993939393939394,
+    "mean_latency_ms": 149.43454064987952,
+    "p95_latency_ms": 185.7883525604847,
+    "brier": 0.07282530606060605,
+    "normalized_mae": 0.12293333333333334,
+    "reported_score_contract_deviations": 1
+  },
+  "candidate": {
+    "n": 3300,
+    "accuracy": 0.7803030303030303,
+    "mean_latency_ms": 123.35766131031878,
+    "p95_latency_ms": 135.08756932860703,
+    "brier": 0.10486246206768123,
+    "normalized_mae": 0.12394029463002901,
+    "reported_score_contract_deviations": 0
+  },
+  "evidence_kind": "heldout",
+  "limits": {
+    "relative_accuracy_loss": 0.05,
+    "latency_ratio": 1.05,
+    "minimum_per_type": 400
+  },
+  "relative_accuracy_loss": 0.023881728582259343,
+  "mean_latency_ratio": 0.825496306100622,
+  "p95_latency_ratio": 0.7271046191371352,
+  "groups": {
+    "all": {
+      "relative_accuracy_loss": 0.023881728582259343,
+      "mean_latency_ratio": 0.825496306100622,
+      "p95_latency_ratio": 0.7271046191371352,
+      "relative_accuracy_loss_upper95": 0.03503703138412959,
+      "mean_latency_ratio_upper95": 0.8371044827625881
+    },
+    "noul": {
+      "relative_accuracy_loss": 0.024161073825503476,
+      "mean_latency_ratio": 0.7584928332705131,
+      "p95_latency_ratio": 0.632721890145128,
+      "relative_accuracy_loss_upper95": 0.04527598757212608,
+      "mean_latency_ratio_upper95": 0.7684644051713982
+    },
+    "choice": {
+      "relative_accuracy_loss": 0.031024531024530955,
+      "mean_latency_ratio": 0.8348407592414834,
+      "p95_latency_ratio": 0.6995006121780902,
+      "relative_accuracy_loss_upper95": 0.04306758117291717,
+      "mean_latency_ratio_upper95": 0.8561511522836748
+    },
+    "score": {
+      "relative_accuracy_loss": 0.0039447731755424265,
+      "mean_latency_ratio": 0.8676148704865326,
+      "p95_latency_ratio": 0.7662296158576847,
+      "relative_accuracy_loss_upper95": 0.04612220550049517,
+      "mean_latency_ratio_upper95": 0.88059545271916
+    }
+  },
+  "by_type": {
+    "choice": {
+      "candidate": {
+        "n": 1600,
+        "accuracy": 0.839375,
+        "mean_latency_ms": 130.10351430675655,
+        "p95_latency_ms": 138.7679384322837,
+        "brier": 0.07880888128101418,
+        "reported_score_contract_deviations": 0
+      },
+      "baseline": {
+        "n": 1600,
+        "accuracy": 0.86625,
+        "mean_latency_ms": 155.8423122811655,
+        "p95_latency_ms": 198.3814395818626,
+        "brier": 0.05420409375,
+        "reported_score_contract_deviations": 0
+      }
+    },
+    "noul": {
+      "candidate": {
+        "n": 800,
+        "accuracy": 0.90875,
+        "mean_latency_ms": 109.45832026496646,
+        "p95_latency_ms": 113.91553100256715,
+        "brier": 0.09050138678472402,
+        "reported_score_contract_deviations": 0
+      },
+      "baseline": {
+        "n": 800,
+        "accuracy": 0.93125,
+        "mean_latency_ms": 144.3102893840114,
+        "p95_latency_ms": 180.04044553672426,
+        "brier": 0.054758,
+        "reported_score_contract_deviations": 0
+      }
+    },
+    "score": {
+      "candidate": {
+        "n": 900,
+        "accuracy": 0.5611111111111111,
+        "mean_latency_ms": 123.720003579187,
+        "p95_latency_ms": 128.9804212312447,
+        "brier": 0.16394533927327348,
+        "normalized_mae": 0.12394029463002901,
+        "reported_score_contract_deviations": 0
+      },
+      "baseline": {
+        "n": 900,
+        "accuracy": 0.5633333333333334,
+        "mean_latency_ms": 142.59783665280943,
+        "p95_latency_ms": 168.33129203296264,
+        "brier": 0.12198951111111112,
+        "normalized_mae": 0.12293333333333334,
+        "reported_score_contract_deviations": 1
+      }
+    }
+  }
+}

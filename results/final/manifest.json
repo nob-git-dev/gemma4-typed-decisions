@@ -1,0 +1,82 @@
+{
+  "created_at": "2026-10-27T22:10:20.484884+00:00",
+  "dataset_sha256": "ea94491335c09d0accc898f7daee49d40be301b973acd4d01adec3353669610b",
+  "n_requests_per_backend": 3300,
+  "warmup_per_backend": 3,
+  "config": {
+    "model_id": "google/gemma-4-26B-A4B-it",
+    "revision": "4d7ae4984b7db7de8f8457170b3f1a419ee76d52",
+    "model_path": "/models/official",
+    "served_model": "gemma4-26b-fp8-order-decisions",
+    "backend": "vllm",
+    "dtype": "bfloat16",
+    "quantization": "fp8",
+    "temperature": 1.0,
+    "max_input_tokens": 4096,
+    "max_total_tokens": 16384,
+    "max_questions": 16,
+    "batch_size": 4,
+    "threads": 4,
+    "loader_buffer_gib": 5,
+    "torch_memory_fraction": 0.5,
+    "kv_cache_gib": 4,
+    "jev_model": "jev-1.14.0",
+    "startup_available_gib": 116,
+    "min_available_gib": 36,
+    "max_gpu_c": 80,
+    "max_thermal_c": 90,
+    "option_orders": 2,
+    "ensemble_method": "logit_mean",
+    "record_order_components": false
+  },
+  "timing": "client HTTP wall time, persistent connections, no retries, warmup excluded",
+  "source_sha256": {
+    "safety.py": "fec29b127f09f67f1bfd6f916474592c979f2080956d9949aaf1a6eed8684985",
+    "gemma_backend.py": "80e5f2d57482f43c284646a57d81fba1006bf79c83b1318271630cb69dff4c5b",
+    "prepare.py": "989389a2caa603677a880bd09debe87cc5b2c302f88bfc31c4b2fe5ecce70dbf",
+    "server.py": "0444b45aec982a2637e39a7162ba3730eb4303f3eb20ace55744f659d4da9336",
+    "order_ensemble.py": "abf10c0757ccde3f8dae63ed24a3b6595634da2540ae8d39c283784470bafff5",
+    "prepare_refinement.py": "68bf7d4358933750e5155e21c99951f186f4c57a04f9c167b951bdfcd2e237bf",
+    "select_refinement.py": "ec44817dc6df0f5e484b2450835d2ed5bfc3f6081b00063dac505ce8ef7d5e5e",
+    "vllm_backend.py": "b33bf00859a55283854b0fccc3d60f7e70b7b9138cc16d8da9ec36cef756ae81",
+    "decision_core.py": "2fc7972eb033b63d22247db8823ea61a33c3b3c16ba9daf5f3000f04505d2dc9",
+    "resume_benchmark.py": "9ee1a108dcccdac3d920b1c54db3f30ac585a5d4363f4ed3627eaecf693876c1",
+    "prepare_eval.py": "54c816510b63720a3df9d2233c20c5ffff7716383c00cf90cb8f05646a5ce9a6",
+    "bounded_worker.py": "c0fd47817cfadde1136f14c1ebce803233abfcad0796007b9e1c88377487aec3",
+    "benchmark.py": "09aad2682c1addc3f012ef48fba2be9c15d3ff67f8d48ede4f5c75fc541f1f28",
+    "metrics.py": "a01d063c1c0679f9fa3b726402ff47f295433bc6e7d56c7f47b9c57e562cb9a1"
+  },
+  "dataset_split": "test",
+  "evaluated_types": [
+    "choice",
+    "noul",
+    "score"
+  ],
+  "response_validation": {
+    "candidate_score": "strict expectation",
+    "official_score_probability_quantum": 0.01,
+    "official_score": "audit consistency; modal accuracy and reported-score MAE are unchanged"
+  },
+  "dataset": "fresh-test-20261028.jsonl",
+  "environment": {
+    "machine": "aarch64",
+    "hardware": "ASUS Ascent GX10 / NVIDIA GB10 / 128 GB unified memory"
+  },
+  "publication": {
+    "observations": "Only public dataset row identifiers and numerical observations; no raw responses or input text",
+    "omitted": [
+      "host identity",
+      "absolute dataset path",
+      "container identity",
+      "mount sources",
+      "raw API metadata"
+    ],
+    "changes_from_measured_sources": {
+      "benchmark.py": "Record only dataset basename and machine architecture in future manifests",
+      "select_refinement.py": "Use a cache inside this standalone checkout",
+      "compose files": "Use a cache inside this standalone checkout",
+      "documentation": "Prepared for standalone publication"
+    },
+    "source_sha256": "Original measured source hashes; packaging changes are described above"
+  }
+}
